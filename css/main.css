@@ -5,6 +5,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Serif JP', serif;
+  width: 100%;
 }
 
 /* Navbar */
@@ -26,7 +27,7 @@ html, body {
 }
 
 .global_nav_item {
-  color: #251e19;
+  color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -34,7 +35,7 @@ html, body {
 }
 
 .global_nav_item:hover {
-  background: #251e19;
+  background: #fff;
   color: #42210b;
 }
 
@@ -80,7 +81,7 @@ html, body {
   width: 65%;
   text-align: left;
   font-size: 20px;
-  line-height: 2.0;
+  line-height: 1.8;
   margin: 20px;
   padding: 20px;
   font-family: "Roboto Light", sans-serif;
@@ -97,6 +98,7 @@ html, body {
   height: auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+
 }
 
 /* Menu Section */
@@ -117,43 +119,48 @@ html, body {
   border-bottom: solid #42210b 2px;
   margin-bottom: 20px;
 }
-
 .recommended-menu-container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    width: 90%;
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Adds space between the items */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    width: 98%;
     margin: 50px auto;
     padding: 20px 0;
+    flex-direction: row-reverse;
 }
 
 .recommended-item {
     display: flex;
-    width: 45%;
+    justify-content: space-between;
+    width: 49%;
     background-color: white;
     color: black;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
+    box-sizing: border-box;
+    position: relative;
 }
-
 .recommended-item img {
-    width: 50%;
+    width: 55%;
     height: 100%;
     object-fit: cover;
 }
 
 .recommended-text {
-    width: 50%;
+    width: 45%;
     padding-left: 20px;
+    text-align: left;
 }
 
 .recommended-text h2 {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 100px;
+    text-align: initial;
+    align-content: initial;
 }
 
 .recommended-text p {
@@ -165,87 +172,130 @@ html, body {
     text-align: right;
     font-size: 18px;
     font-weight: bold;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
 }
 
 /* === Coffee Menu Styles === */
-.coffee_menu {
-  background: rgba(236, 241, 236, 0.8);
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.coffee_menu .center {
+.center {
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.coffee_menu .menu_title {
-  font-size: 1.8rem;
-  color: #42210b;
-  border-bottom: 2px solid #42210b;
-  display: inline-block;
-  padding-bottom: 5px;
+.section_inner {
+  padding: 50px 10% 30px;
 }
 
-.coffee_menu ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  justify-items: center;
-}
-
-.coffee_menu li {
-  background: white;
+.section_title {
+  font-family: 'Noto Serif JP', serif;
   text-align: center;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  width: 100%;
-  max-width: 300px;
+  margin-bottom: 50px;
 }
 
-.coffee_menu_image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-.coffee_menu li h2 {
-  font-size: 1.2rem;
-  margin: 10px 0;
+.menu_title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
   color: #333;
 }
 
-.coffee_menu li p {
-  font-size: 1rem;
-  color: #666;
+.main-menu {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+/* Coffee Menu Container */
+.menu_list {
+  min-width: 98%;
+  margin: 20px;
+  padding: 0;
+}
+
+.menu_list > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Individual Coffee Items */
+.coffee-list {
+    display: flex;
+    flex-direction: row;
+    width: 49%;
+    padding: 10px;
+    align-items: center;
+    gap: 1rem;
+}
+.menu-image {
+    width: 20%;
+    padding-right: 10px;
+    align-items: flex-end !important;
+}
+/* Coffee Images - 20% of container width */
+.coffee_menu_image {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover;
+}
+
+/* Coffee Content - 80% of container width */
+.coffee_menu_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+    text-align: left;
+}
+
+.menu_item_title {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.coffee_menu_price {
+  font-size: 18px;
   font-weight: bold;
+  color: #2c5530;
+
 }
 
+/* Fix for text wrapping issues */
+.coffee_menu_content h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.coffee_menu_content .coffee_menu_price {
+    color: #333333;
+}
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .coffee_menu ul {
-    grid-template-columns: 1fr;
+  .menu_list.coffee_menu > ul {
+    flex-direction: column;
   }
 
-  .coffee_menu li {
+  .coffee_menu_list_item {
     width: 100%;
-    max-width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .coffee_menu_image {
+    width: 20%;
+  }
+
+  .coffee_menu_content {
+    width: 80%;
   }
 }
+.section_access_inner_container{
 
-.section_access_inner_container {}
-
+}
 .access {
     display: initial;
     flex-direction: initial;
@@ -275,12 +325,12 @@ html, body {
     height: 400px;
 }
 
-/* === Footer Styles === */
 .footer {
     background-color: #251e19;
     color: white;
     text-align: center;
     padding: 20px 0;
+    height: 75px;
 }
 
 .footer_nav {
@@ -307,6 +357,7 @@ html, body {
     font-size: 16px;
 }
 
+
 .footer_nav ul li::after {
     content: " • ";
     color: white;
@@ -316,18 +367,13 @@ html, body {
     content: "";
 }
 
-.footer_nav div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
+/* Logo Styling */
 .footer_logo {
-    height: 50px;
+    height: 30px;
 }
 
+/* Center Copyright */
 .copyright {
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 10px;
+    font-size: 12px;
 }
