@@ -1,4 +1,4 @@
-# lake-project
+# todo-project
 
 ## Project setup
 ```
